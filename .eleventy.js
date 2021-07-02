@@ -3,5 +3,5 @@ module.exports = {
     input: "src",
     output: "out"
   },
-  pathPrefix: "/ninjility/" // serves with a prefix
+  // pathPrefix: "/ninjility/" // serves with a prefix
 };
