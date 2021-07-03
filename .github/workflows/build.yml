@@ -31,3 +31,4 @@ jobs:
         with:
           publish_dir: ./out
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          cname: ninjility.com
