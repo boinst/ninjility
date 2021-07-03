@@ -23,3 +23,6 @@ https://www.babylonjs.com/
 
 Here's a Babylon sample that has some great cannon mechanics:
 https://playground.babylonjs.com/#C21DGD#2
+
+I'd love to add some terminal stuff to this site using xterm
+https://xtermjs.org/
