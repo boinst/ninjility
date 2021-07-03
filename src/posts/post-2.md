@@ -1,5 +1,5 @@
 ---
-layout: base 
+layout: article 
 title: How To Get Rich Quick
 date: 2019-06-01
 tags: ['post']
@@ -9,5 +9,5 @@ tags: ['post']
 Buy the latest and greatest cryptocurrency that no-one has heard of.
 <!-- Excerpt End -->
  
-## Legal Stuff
+### Legal Stuff
 We do not accept any liability for any loss or damage.
