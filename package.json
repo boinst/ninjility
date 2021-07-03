@@ -4,18 +4,16 @@
   "description": "Ninjility.com website, built with Eleventy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx eleventy",
+    "serve": "npx eleventy --serve",
+    "debug": "DEBUG=* npx eleventy",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1"
-  },
-  "scripts": {
-    "build": "npx eleventy",
-    "serve": "npx eleventy --serve",
-    "debug": "DEBUG=* npx eleventy",
-    "test": "jest"
+    "@11ty/eleventy": "^0.12.1",
+    "moment": "^2.29.1"
   }
 }
