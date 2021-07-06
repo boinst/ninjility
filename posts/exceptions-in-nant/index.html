@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>This is my site, made with Eleventy</title> 
+  <!-- Crisp integration -->
+  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="3829a239-3f41-4ccc-b54a-bb84f6252ba8";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+</head> 
+<body> 
+  <header>
+    <a href="/">Home</a>
+    |
+    <a href="/about">About</a>
+    |
+    <a href="/blog">Blog</a>
+    |
+    <a href="/games">Games</a>
+    |
+    <a href="/acknowledgements">Acknowledgements</a>
+  </header> 
+  <main> 
+    <article>
+  <h1>Exceptions in NAnt</h1> 
+  <time datetime="2021-07-05T00:00:00.000Z">July 5, 2021</time> 
+  <p><a href="https://github.com/nant/nant">NAnt</a> is an open-source build orchestration tool, written in .NET, and inspired by the Java-based Ant project. I'm mostly switching over to Cake Frosting these days, but NAnt served me very well for many years.</p>
+<!-- Excerpt Start -->
+<p>NAnt has limited support for exceptions, but there are a few ways we can make use of exception behaviour in our NAnt logic.</p>
+<!-- Excerpt End -->
+<p>You can throw exceptions in NAnt by invoking the <code>fail</code> task.</p>
+<pre><code class="language-xml">&lt;fail message=&quot;Something wrong here.&quot; /&gt;
+</code></pre>
+<p>Internally within the NAnt executor this throws a dotnet exception of type <code>BuildException</code>. In fact, any kind of task failure inside of NAnt ends up throwing and propagating a <code>BuildException</code>.</p>
+<p>You can also catch exceptions (including any kind of task failure) using the <code>trycatch</code> block, as follows.</p>
+<pre><code class="language-xml">&lt;trycatch&gt;
+    &lt;try&gt;
+        &lt;echo message=&quot;In try&quot; /&gt;
+        &lt;fail message=&quot;Just because...&quot; /&gt;
+    &lt;/try&gt;
+    &lt;catch property=&quot;failure&quot;&gt;
+        &lt;echo message=&quot;Caught failure: ${failure}&quot; /&gt;
+        &lt;fail message=&quot;Bad catch&quot; /&gt;
+    &lt;/catch&gt;
+    &lt;finally&gt;
+        &lt;echo message=&quot;Finally done&quot; /&gt;
+    &lt;/finally&gt;
+&lt;/trycatch&gt;
+</code></pre>
+<h1>Further Reading</h1>
+<p>Learn more about NAnt with these resources:</p>
+<ul>
+<li>NAnt on <a href="https://en.wikipedia.org/wiki/NAnt">Wikipedia</a></li>
+</ul>
+
+</article>
+  </main> 
+  <footer>Site Footer</footer> 
+</body> 
+</html>
